@@ -1,0 +1,147 @@
+.weather{
+	display: inline-block;
+	float:right;
+}
+.navbar-right{
+	line-height: 38px;
+}
+.bui-box-container{
+	width: 77.125rem;
+	margin: 0 auto;
+	margin-top: 1rem;
+	min-height: 93.75rem;
+}
+.article-title{
+	font-size: 34px;
+    font-weight: 700;
+    line-height: 44px;
+    color: #222;
+}
+.bui-left-middle{
+	width: 660px;
+}
+.article-sub{
+	margin-top: 12px;
+    margin-bottom: 20px;
+    font-size: 13px
+}
+.article-sub span{
+	color: #777;
+	margin-right: 2px;
+}
+.pic2{
+	max-width:100%;
+	margin: 10px auto;
+	display: block;
+}
+.article-content>div p{
+	margin: 10px 0;
+    text-indent: 2em;
+}
+.article-content{
+	font-size: 16px;
+	padding: 20px 0 58px;
+    color: #222;
+    line-height: 36px;
+    text-align: justify;
+    border-bottom: 1px solid rgb(229,229,229);
+}
+.actGotop{position:fixed;_position:absolute;bottom:100px;right:50px;width:150px;height:195px;display:none;}
+.actGotop a,.actGotop a:link{width:150px;height:195px;display:inline-block;background:url(../img/blog7year_gotop.png) no-repeat;_background:url(../img/blog7year_gotop.gif) no-repeat;outline:none;}
+.actGotop a:hover{background:url(../img/blog7year_gotopd.gif) no-repeat;outline:none;}
+.detail-comment{
+	margin: 30px 0;
+}
+.c-header{
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 700;
+	color: #777;
+}
+.c-header>em{
+	font: 22px/24px Georgia;
+    color: #f85959;
+}
+#comment .avatar-wrap{
+	float: left;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #e8e8e8;
+    border-radius: 50%;
+    background: url(//s3.pstatp.com/toutiao/resource/toutiao_web/static/style/image/newindex/default40_c78f50e.png) no-repeat 50%;
+    overflow: hidden;
+}
+.input-wrap{
+    font-size: 16px;
+    color: #3f404c;
+    border: 1px solid #3f404c;
+    background: #fff;
+    margin-left: 42px;
+    height: 44px;
+	position: relative;
+    box-sizing: content-box;
+}
+.c-textarea textarea{
+	display: block;
+    font-size: 16px;
+    width: 100%;
+    height: 30px;
+    resize: none;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    transition: all .4s;
+}
+.c-textarea{
+	background: #fff;
+    padding: 11px 16px 0;
+}
+.c-action{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    border: none;
+    height: 44px;
+	
+}
+.c-sumbit{
+	float: right;
+    line-height: 44px;
+    background-color: #3f404c;
+    width: 110px;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    cursor: pointer
+}
+#comment .c-content{
+	margin-left: 42px;
+    overflow: hidden;
+}
+ul{
+	list-style: none;
+}
+#comment .c-item{
+	padding: 14px 0;
+    border-top: 1px solid #f2f2f2
+}
+#comment .c-user-name{
+	color: #406599;
+    cursor: pointer;
+	text-decoration: none;
+}
+#comment .c-content .c-create-time {
+    color: #777;
+	font-size: 14px;
+	float: right;
+}
+#comment .c-content p{
+	font-size: 14px;
+    line-height: 22px;
+    color: #222;
+}
+#comment .c-item:first-child {
+    margin-top: 22px;
+}

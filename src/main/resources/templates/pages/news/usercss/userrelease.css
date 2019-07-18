@@ -1,0 +1,11 @@
+.min{
+    width: 50%;
+    margin: 0 auto;
+}
+.panel-body li{
+	list-style: none;
+}
+.panel-body a{
+	text-decoration: none;
+}
+

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <meta name="renderer" content="webkit">
+  <title>珠海头条</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!--导航-->
+  <link href="css/collder.css" rel="stylesheet" type="text/css">
+  <!--下拉刷新-->
+  <link rel="stylesheet"   type="text/css" href="css/refresh.css"/>
+  <!--广告-->
+  <link rel="stylesheet" type="text/css" href="css/advertising .css">
+  <link rel="stylesheet" type="text/css" href="css/start.css"/>
+  <!--广告轮播-->
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/index.css"/> 
+  
+ <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+ <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+ <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+ <!--下拉刷新-->
+ <script type="text/javascript" src="https://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
+ <script type="text/javascript" src="./js/refresh.js"></script>
+ <!--两边广告-->
+ <script type="text/javascript" src="js/advertising .js"></script>
+ <script type="text/javascript">
+  $(function(){
+    $(".coupletbox").clonefn({
+       cloneto:false,//是否允许克隆
+       initial:"top", //初始位置top或down
+       closeBtn:".closeBtn",//关闭按钮
+       speed:800,//动画速度
+       easing:"easeInOutBack",//扩展动画，是基于jQuery Easing v1.3官方下载地址http://gsgd.co.uk/sandbox/jquery/easing/
+       zIndex:10000 //层
+  });
+});
+
+ 
+  </script>
+   <!--广告轮播-->
+    <script src="js/jquery-ui-1.8.6.core.widget.js"></script>
+    <script src="js/jqueryui.bannerize.js"></script>
+   <script type="text/javascript">
+        $(document).ready(function(){
+            $('#banners').bannerize({
+                shuffle: 1,
+                interval: "5"
+            });
+            $(".ui-line").hover(function(){
+                $(this).addClass("ui-line-hover");
+              $(this).find(".ui-bnnerp").addClass("ui-bnnerp-hover");
+           },function(){
+                $(this).removeClass("ui-line-hover");
+                $(this).find(".ui-bnnerp").removeClass("ui-bnnerp-hover");
+            });
+        });
+    </script>
+
+</head>
+
+<body> 
+    
+  <!--对联广告-->
+
+  <div class="coupletbox" style="width:150px; height:300px; background-image:url(img/girl.jpg)">
+      <a href="#" class="closeBtn"  title="关闭">&times;关闭</a>	
+    </div>
+    <div class="coupletbox" style="width:150px; height:300px; background-image:url(img/girl1.jpg)">
+      <a href="#" class="closeBtn"  title="关闭">&times;关闭</a>
+    </div>
+  
+  <!--End对联广告
+  <!--装全部内容-->
+  <div class="mid">	
+
+  
+  <!--这是导航栏-->
+	
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="label label-danger">Menu</span>
+          <!-- <span class="label label-danger">珠海头条</span> -->
+
+        </button>
+        <a class="navbar-brand" href="#">珠海头条</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <!--这是固定标签-->
+          <li class="active"><a href="#">热点 <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">财经</a></li>
+          <li><a href="#">天文</a></li>
+          <li><a href="#">国际</a></li>
+          <li><a href="#">汽车</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">更多<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">娱乐</a></li>
+              <li><a href="#">体育</a></li>
+              <li><a href="#">文学</a></li>
+              <li><a href="#">军事</a></li>
+              <li><a href="#">科技</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入搜索内容">
+          </div>
+          <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">下载App<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">xx图片</a></li>
+            </ul>
+          </li>
+          <div class="bbtn">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+              登录
+            </button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+              注册
+            </button>
+          </div>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">联系我们 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">联系方式</a></li>
+              <li><a href="#">联系地址</a></li>
+              <li><a href="#">制作人</a></li>
+              <li><a href="#">鑫，生</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+  </nav> 
+
+  <div>
+    <!--登录模态框-->
+    <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-container">
+              <div class="col-md-6 col-md-offset-3">
+                <form >
+                  <div class="form-group has-feedback">
+                    <h1 >登录</h1>
+                    <label for="username">用户名</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                      <input id="login-username" class="form-control" placeholder="请输入用户名" maxlength="20" type="text">
+                    </div>
+
+                    <span style="color:red;display: none;" class="tips"></span>
+                    <span style="display: none;" class=" glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                  </div>
+
+                  <div class="form-group has-feedback">
+                    <label for="password">密码</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                      <input id="login-password" class="form-control" placeholder="请输入密码" maxlength="20" type="password">
+                    </div>
+
+                    <span style="color:red;display: none;" class="tips"></span>
+                    <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <input class="form-control btn btn-primary" id="submit"
+            value="立即登录" type="submit">
+						
+                  </div>
+
+                  <div class="form-group">
+                    <input value="重置" class="form-control btn btn-danger" type="reset">
+                  </div>
+                  <div style="display:block;width:330px;height:40px;">
+                    <span id="lab_type2">使用第三方直接登陆</span>
+                  </div>
+
+                  <div class="width:330px;height:100px;border-bottom: 1px solid #FFFFFF;">
+                    <br />
+                    <button id="login_QQ" type="button" class="btn btn-info">
+                      <img src="img/qq32.png" class="width:20px;margin-top:-4px;" />&emsp;QQ登录
+                    </button>
+                    <button id="login_WB" type="button" class="btn btn-danger">
+                      <img src="img/sina32.png" class="width:20px;margin-top:-4px;" />&emsp;微博登录
+                    </button>
+                  </div>
+              </form>
+			</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- 注册模态框 -->
+  <div class="modal fade " id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-container">
+            <div class="col-md-6 col-md-offset-3">
+              <form>
+                <div class="form-group has-feedback">
+                  <h1 align="center">注册</h1>
+                  <label for="username">用户名</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input id="reg-username" class="form-control" placeholder="请输入用户名" maxlength="20" type="text">
+                  </div>
+
+                  <span style="color:red;display: none;" class="tips"></span>
+                  <span style="display: none;" class=" glyphicon glyphicon-remove form-control-feedback"></span>
+                  <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="password">密码</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input id="reg-password" class="form-control" placeholder="请输入密码" maxlength="20" type="password">
+                  </div>
+
+                  <span style="color:red;display: none;" class="tips"></span>
+                  <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                  <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="passwordConfirm">确认密码</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input id="passwordConfirm" class="form-control" placeholder="请再次输入密码" maxlength="20"
+                      type="password">
+                  </div>
+                  <span style="color:red;display: none;" class="tips"></span>
+                  <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                  <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                </div>
+                <div>
+                  <tr>
+
+                    <td>性别：</td>
+                    <td>
+                      <input type="radio" name="sex" id="man1" value="1" />
+                      <label for="man1">男</label>
+                      <input type="radio" name="sex" id="man2" value="0" />
+                      <label for="man2">女</label>
+
+                    </td>
+                  </tr>
+                </div>
+                <div class="row">
+                  <div class="col-xs-7">
+                    <div class="form-group has-feedback">
+                      <label for="idcode-btn">验证码</label>
+                      <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
+                        <input id="idcode-btn1" class="form-control" placeholder="请输入验证码" maxlength="4" type="text">
+                      </div>
+                      <span style="color:red;display: none;" class="tips"></span>
+                      <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                      <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                    </div>
+                  </div>
+                  <div class="col-xs-5" style="padding-top: 30px">
+                    <div id="idcode" style="background: transparent;"></div>
+                  </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="phoneNum">手机号码</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+                    <input id="phoneNum" class="form-control" placeholder="请输入手机号码" maxlength="11" type="text">
+                  </div>
+                  <span style="color:red;display: none;" class="tips"></span>
+                  <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                  <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-7">
+                    <div class="form-group has-feedback">
+                      <label for="idcode-btn">校验码</label>
+                      <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
+                        <input id="idcode-btn" class="form-control" placeholder="请输入校验码" maxlength="6" type="text">
+                      </div>
+                      <span style="color:red;display: none;" class="tips"></span>
+                      <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                      <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                    </div>
+                  </div>
+                  <div class="col-xs-5 text-center" style="padding-top: 26px">
+                    <button type="button" id="loadingButton" class="btn btn-primary" autocomplete="off">获取短信校验码</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control btn btn-primary" id="submit1"
+                    value="立即注册" type="submit">
+                </div>
+
+                <div class="form-group">
+                  <input value="重置" id="reset" class="form-control btn btn-danger" type="reset">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!--广告轮播-->
+    <div class="warrper">
+        <!--content-->
+        <div class="content">
+            <!--企业动态-->
+            <div class="index-new w1200 mt30">
+                <div class="indexadd mt50 mb60">
+                    <div id="banners" class="ui-banner">
+                        <ul class="ui-banner-slides">
+                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Get Heart Smart With Essential Omega III" title="NEW! Get Heart Smart With Essential Omega III"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Support Your Skin on a Cellular Level" title="NEW! Support Your Skin on a Cellular Level"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Indulge in Luxury With Royal Spa" title="NEW! Indulge in Luxury With Royal Spa"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Get paid to shop with Cashback" title="NEW! Get paid to shop with Cashback"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Radiation Protection at its Best" title="NEW! Radiation Protection at its Best"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="Unleash the Power of Isotonix Today" title="Unleash the Power of Isotonix Today"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="Motives is Changing the Face of UK Beauty" title="Motives is Changing the Face of UK Beauty"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="Get a Taste of Spring" title="Get a Taste of Spring"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="Try Isotonix OPC-3 Today for Better Health" title="Try Isotonix OPC-3 Today for Better Health"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="Feel like a princess with Royal Spa" title="Feel like a princess with Royal Spa"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="Stay energised with Isotonix for the Queen's Jubilee" title="Stay energised with Isotonix for the Queen's Jubilee"/></a></li>
+                            <li><a href=""><img src="img/simgd.jpg" alt="WorldStores - Top Brands Delivered Next Day" title="WorldStores - Top Brands Delivered Next Day"/></a></li>
+                        </ul><!--ui-banner-slides end-->
+                        <ul class="ui-banner-slogans">
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
+                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
+                                            开展扶贫济困募捐活动。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul><!--ui-banner-slogans end-->
+                    </div>
+                </div>
+            </div>
+            <!--企业动态 end-->
+        </div>
+        <!--content end-->
+ 
+    </div>
+
+    <!--下拉刷新-->
+   
+    <div id="app">
+      <ul>
+        <li>
+					<div class="no-mode">
+						<div class="left-pic">
+							<a href="#">
+						<img src="img/pic.jpg" class="pic"/>
+						</a>
+						</div>
+						<div class="title-box-right">
+						<div class="title-box">						
+							<a href="#" target="_blank" class="link">海滨公园提升改造后全新亮相</a>	
+							</div>
+							<div class="title-inner">
+								<p>中国地震台网自动测定：7月14日17时10分在印尼哈马黑拉岛附近发生7.0级左右地震。</p>
+							</div>
+							<div class="bui-left-footer">
+								<a>珠海新闻</a>
+								<a>xxx评论</a>
+								</div>
+						</div>
+						</div>
+        </li>
+        <li>
+        	<div class="no-mode">
+        		<div class="left-pic">
+        			<a href="#">
+        		<img src="img/pic.jpg" class="pic"/>
+        		</a>
+        		</div>
+        		<div class="title-box-right">
+        		<div class="title-box">						
+        			<a href="#" target="_blank" class="link">海滨公园提升改造后全新亮相</a>	
+        			</div>
+					<div class="title-inner">
+						<p>中国地震台网自动测定：7月14日17时10分在印尼哈马黑拉岛附近发生7.0级左右地震。</p>
+					</div>
+        			<div class="bui-left-footer">
+        				<a>珠海新闻</a>
+        				<a>xxx评论</a>
+        				</div>
+        		</div>
+        		</div>
+        </li>
+        <li>
+        	<div class="no-mode">
+        		<div class="left-pic">
+        			<a href="#">
+        		<img src="img/pic.jpg" class="pic"/>
+        		</a>
+        		</div>
+        		<div class="title-box-right">
+        		<div class="title-box">						
+        			<a href="#" target="_blank" class="link">海滨公园提升改造后全新亮相</a>	
+        			</div>
+				<div class="title-inner">
+					<p>中国地震台网自动测定：7月14日17时10分在印尼哈马黑拉岛附近发生7.0级左右地震。</p>
+				</div>
+        			<div class="bui-left-footer">
+        				<a>珠海新闻</a>
+        				<a>xxx评论</a>
+        				</div>
+        		</div>
+        		</div>
+        </li>
+        <li>
+        	<div class="no-mode">
+        		<div class="left-pic">
+        			<a href="#">
+        		<img src="img/pic.jpg" class="pic"/>
+        		</a>
+        		</div>
+        		<div class="title-box-right">
+        		<div class="title-box">						
+        			<a href="#" target="_blank" class="link">海滨公园提升改造后全新亮相</a>	
+        			</div>
+					<div class="title-inner">
+						<p>中国地震台网自动测定：7月14日17时10分在印尼哈马黑拉岛附近发生7.0级左右地震。</p>
+					</div>
+        			<div class="bui-left-footer">
+        				<a>珠海新闻</a>
+        				<a>xxx评论</a>
+        				</div>
+        		</div>
+        		</div>
+        </li>
+        <li>
+        	<div class="no-mode">
+        		<div class="left-pic">
+        			<a href="#">
+        		<img src="img/pic.jpg" class="pic"/>
+        		</a>
+        		</div>
+        		<div class="title-box-right">
+        		<div class="title-box">						
+        			<a href="#" target="_blank" class="link">海滨公园提升改造后全新亮相</a>	
+        			</div>
+					<div class="title-inner">
+						<p>中国地震台网自动测定：7月14日17时10分在印尼哈马黑拉岛附近发生7.0级左右地震。</p>
+					</div>
+        			<div class="bui-left-footer">
+        				<a>珠海新闻</a>
+        				<a>xxx评论</a>
+        				</div>
+        		</div>
+        		</div>
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+</body>
+
+  <!--下拉刷新-->
+ <!-- <script>
+  var n=0,flag=true;
+  function appendTestData(){
+    return "<li><h5>"+Math.floor(Math.random()*1000)+"</h5><p>现在开始报时："+new Date()+"</p></li>"
+  }
+  
+  function addhtml(type){
+    console.log("第"+n+"次加载成功")
+    $(".tip").html("第"+n+"次")
+    $("#app ul")[type](appendTestData()+appendTestData()+appendTestData()+appendTestData())
+  }
+  var refreshBox=new PullToRefresh({
+    container:"#app",
+    pull:{
+        callback:function(){
+          setTimeout(function(){             
+            n=0     
+            addhtml("html")
+            refreshBox.endPullRefresh(true)
+          },1000)
+        }
+    },
+    up:{
+        callback:function(){
+          setTimeout(function(){   
+            if(n<8){
+              n++
+             addhtml("append")
+             refreshBox.endUpLoading(true)    
+            }else{    //没有数据
+              refreshBox.endUpLoading(false)
+            }
+          },1000)
+        }
+    }
+  })
+  </script>
+  -->
+
+
+       
+</html>

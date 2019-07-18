@@ -1,0 +1,24 @@
+.weather{
+	float: right;
+	display: inline-block;
+}
+.panel-primary{
+	width: 60%;
+	margin: 0 auto;
+}
+.form-group{
+	width: 80%;
+	margin: 0 auto;
+}
+.form-inner{
+	width: 80%;
+	margin: 0 auto;
+}
+.form-pic{
+	width: 80%;
+	margin: 0 auto;
+}
+.form-btn{
+	width: 10%;
+	margin: 0 auto;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta name="renderer" content="webkit">
+		<title>发布中心</title>
+		<!-- Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="icon" href="img/timg.jpg" type="image/x-icon"/>
+		<link rel="shortcut icon" href="img/timg.jpg" type="image/x-icon">
+		<link rel="stylesheet" href="css/release.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+		<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<nav class="navbar navbar-default" role="navigation">
+			    <div class="container-fluid"> 
+			    <div class="navbar-header">
+			        <button type="button" class="navbar-toggle" data-toggle="collapse"
+			                data-target="#example-navbar-collapse">
+			            <span class="sr-only">切换导航</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			        </button>
+			        <a class="navbar-brand" href="#">珠海头条</a>
+			    </div>
+			    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+			        <ul class="nav navbar-nav">
+			            <li><a href="#">热点</a></li>
+			            <li><a href="#">财经</a></li>
+						<li><a href="#">国际</a></li>
+						<li><a href="#">汽车</a></li>
+			            <li class="dropdown">
+			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                    更多 <b class="caret"></b>
+			                </a>
+			                <ul class="dropdown-menu">
+			                    <li><a href="#">游戏</a></li>
+			                    <li><a href="#">娱乐</a></li>
+			                    <li><a href="#">体育</a></li>
+								<li><a href="#">军事</a></li>
+								<li><a href="#">文学</a></li>
+			                </ul>
+			            </li>
+			        </ul>
+						<div class="weather">
+						<iframe width="420" scrolling="no" height="55" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&icon=1&num=5&site=12">			
+						</iframe>
+						<ul class="nav navbar-right">
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						            个人中心 <b class="caret"></b>
+						        </a>
+						        <ul class="dropdown-menu">
+						            <li><a href="#">游戏</a></li>
+						            <li><a href="#">娱乐</a></li>
+						            <li><a href="#">体育</a></li>
+						        </ul></li>
+								<li></li>
+						</ul>
+					</div>
+					
+			    </div>
+			    </div>
+			</nav>
+			
+	<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">发布新闻</h3>
+	</div>
+	<form>
+	<div class="form-group">
+		<label for="name">标题</label>
+		<input type="text" class="form-control" placeholder="文本输入">
+	</div>
+	<div class="form-inner">
+		<label for="name">文本框</label>
+		<textarea class="form-control" rows="3"></textarea>
+	</div>
+	<div class="form-pic">
+		<label for="inputfile">上传图片</label>
+		<input type="file" id="inputfile">
+	</div>
+	<br />
+	<div class="form-btn">
+		<button type="button" class="btn btn-primary">提交</button>
+		<button type="rest" class="btn btn-warning">重置</button>
+	</div>
+</form>
+	</div>
+		</div>
+	</body>
+</html>
