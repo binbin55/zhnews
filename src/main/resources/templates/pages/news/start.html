@@ -10,15 +10,15 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <!--导航-->
-  <link href="css/collder.css" rel="stylesheet" type="text/css">
+  <link href="/news/css/collder.css" rel="stylesheet" type="text/css">
   <!--下拉刷新-->
-  <link rel="stylesheet"   type="text/css" href="css/refresh.css"/>
+  <link rel="stylesheet"   type="text/css" href="/news/css/refresh.css"/>
   <!--广告-->
-  <link rel="stylesheet" type="text/css" href="css/advertising .css">
-  <link rel="stylesheet" type="text/css" href="css/start.css"/>
+  <link rel="stylesheet" type="text/css" href="/news/css/advertising .css">
+  <link rel="stylesheet" type="text/css" href="/news/css/start.css"/>
   <!--广告轮播-->
-  <link rel="stylesheet" href="css/reset.css"/>
-  <link rel="stylesheet" href="css/index.css"/> 
+  <link rel="stylesheet" href="/news/css/reset.css"/>
+  <link rel="stylesheet" href="/news/css/index.css"/>
   
  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
@@ -26,9 +26,9 @@
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
  <!--下拉刷新-->
  <script type="text/javascript" src="https://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
- <script type="text/javascript" src="./js/refresh.js"></script>
+<!-- <script type="text/javascript" src="/news/js/refresh.js"></script>-->
  <!--两边广告-->
- <script type="text/javascript" src="js/advertising .js"></script>
+ <script type="text/javascript" src="/news/js/advertising .js"></script>
  <script type="text/javascript">
   $(function(){
     $(".coupletbox").clonefn({
@@ -40,12 +40,10 @@
        zIndex:10000 //层
   });
 });
-
- 
   </script>
    <!--广告轮播-->
-    <script src="js/jquery-ui-1.8.6.core.widget.js"></script>
-    <script src="js/jqueryui.bannerize.js"></script>
+    <script src="/news/js/jquery-ui-1.8.6.core.widget.js"></script>
+    <script src="/news/js/jqueryui.bannerize.js"></script>
    <script type="text/javascript">
         $(document).ready(function(){
             $('#banners').bannerize({
@@ -61,17 +59,22 @@
             });
         });
     </script>
+   
 
 </head>
 
 <body> 
-    
+  <!--巨幕-->
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>珠海头条，珠海人的门户网站</h1>
+    <p>让你足不出户看世界</p> 
+  </div>
   <!--对联广告-->
 
-  <div class="coupletbox" style="width:150px; height:300px; background-image:url(img/girl.jpg)">
+  <div class="coupletbox" style="width:150px; height:300px; background-image:url(/news/img/girl.jpg)">
       <a href="#" class="closeBtn"  title="关闭">&times;关闭</a>	
     </div>
-    <div class="coupletbox" style="width:150px; height:300px; background-image:url(img/girl1.jpg)">
+    <div class="coupletbox" style="width:150px; height:300px; background-image:url(/news/img/girl1.jpg)">
       <a href="#" class="closeBtn"  title="关闭">&times;关闭</a>
     </div>
   
@@ -82,7 +85,7 @@
   
   <!--这是导航栏-->
 	
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-default " role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -105,9 +108,10 @@
           <!--这是固定标签-->
           <li class="active"><a href="#">热点 <span class="sr-only">(current)</span></a></li>
           <li><a href="#">财经</a></li>
-          <li><a href="#">天文</a></li>
-          <li><a href="#">国际</a></li>
+          
+          
           <li><a href="#">汽车</a></li>
+          <li><a href="#">图片</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
               aria-expanded="false">更多<span class="caret"></span></a>
@@ -155,26 +159,27 @@
           </li>
         </ul>
       </div><!-- /.navbar-collapse -->
+     
     </div><!-- /.container-fluid -->
 
   </nav> 
 
   <div>
     <!--登录模态框-->
-    <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-toggle="modal">
 
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <div class="modal-container">
               <div class="col-md-6 col-md-offset-3">
-                <form >
+                <form id="login-form">
                   <div class="form-group has-feedback">
                     <h1 >登录</h1>
                     <label for="username">用户名</label>
                     <div class="input-group">
                       <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                      <input id="login-username" class="form-control" placeholder="请输入用户名" maxlength="20" type="text">
+                      <input id="login-username" class="form-control" placeholder="请输入用户名" maxlength="20" type="text" name="login-username">
                     </div>
 
                     <span style="color:red;display: none;" class="tips"></span>
@@ -186,7 +191,7 @@
                     <label for="password">密码</label>
                     <div class="input-group">
                       <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                      <input id="login-password" class="form-control" placeholder="请输入密码" maxlength="20" type="password">
+                      <input id="login-password" class="form-control" placeholder="请输入密码" maxlength="20" type="password" name="login-password">
                     </div>
 
                     <span style="color:red;display: none;" class="tips"></span>
@@ -196,24 +201,25 @@
 
                   <div class="form-group">
                     <input class="form-control btn btn-primary" id="submit"
-            value="立即登录" type="submit">
+            value="立即登录" type="button">
 						
                   </div>
 
                   <div class="form-group">
-                    <input value="重置" class="form-control btn btn-danger" type="reset">
+                    <input id="reset1" value="重置" class="form-control btn btn-danger" type="reset">
                   </div>
                   <div style="display:block;width:330px;height:40px;">
                     <span id="lab_type2">使用第三方直接登陆</span>
                   </div>
 
                   <div class="width:330px;height:100px;border-bottom: 1px solid #FFFFFF;">
+                      <span id="login-message"></span>
                     <br />
                     <button id="login_QQ" type="button" class="btn btn-info">
-                      <img src="img/qq32.png" class="width:20px;margin-top:-4px;" />&emsp;QQ登录
+                      <img src="/news/img/qq32.png" class="width:20px;margin-top:-4px;" />&emsp;QQ登录
                     </button>
                     <button id="login_WB" type="button" class="btn btn-danger">
-                      <img src="img/sina32.png" class="width:20px;margin-top:-4px;" />&emsp;微博登录
+                      <img src="/news/img/sina32.png" class="width:20px;margin-top:-4px;" />&emsp;微博登录
                     </button>
                   </div>
               </form>
@@ -228,20 +234,20 @@
 
 
   <!-- 注册模态框 -->
-  <div class="modal fade " id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade " id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-toggle="modal">
 
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <div class="modal-container">
             <div class="col-md-6 col-md-offset-3">
-              <form>
+              <form id="reg-form">
                 <div class="form-group has-feedback">
                   <h1 align="center">注册</h1>
-                  <label for="username">用户名</label>
+                  <label for="reg-username">用户名</label>
                   <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                    <input id="reg-username" class="form-control" placeholder="请输入用户名" maxlength="20" type="text">
+                    <input id="reg-username" class="form-control" placeholder="请输入用户名" maxlength="20" type="text" name="regUsername">
                   </div>
 
                   <span style="color:red;display: none;" class="tips"></span>
@@ -250,10 +256,10 @@
                 </div>
 
                 <div class="form-group has-feedback">
-                  <label for="password">密码</label>
+                  <label for="reg-password">密码</label>
                   <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                    <input id="reg-password" class="form-control" placeholder="请输入密码" maxlength="20" type="password">
+                    <input id="reg-password" class="form-control" placeholder="请输入密码" maxlength="20" type="password" name="regPassword">
                   </div>
 
                   <span style="color:red;display: none;" class="tips"></span>
@@ -272,42 +278,12 @@
                   <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
                   <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
                 </div>
-                <div>
-                  <tr>
-
-                    <td>性别：</td>
-                    <td>
-                      <input type="radio" name="sex" id="man1" value="1" />
-                      <label for="man1">男</label>
-                      <input type="radio" name="sex" id="man2" value="0" />
-                      <label for="man2">女</label>
-
-                    </td>
-                  </tr>
-                </div>
-                <div class="row">
-                  <div class="col-xs-7">
-                    <div class="form-group has-feedback">
-                      <label for="idcode-btn">验证码</label>
-                      <div class="input-group">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
-                        <input id="idcode-btn1" class="form-control" placeholder="请输入验证码" maxlength="4" type="text">
-                      </div>
-                      <span style="color:red;display: none;" class="tips"></span>
-                      <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
-                      <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
-                    </div>
-                  </div>
-                  <div class="col-xs-5" style="padding-top: 30px">
-                    <div id="idcode" style="background: transparent;"></div>
-                  </div>
-                </div>
 
                 <div class="form-group has-feedback">
                   <label for="phoneNum">手机号码</label>
                   <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
-                    <input id="phoneNum" class="form-control" placeholder="请输入手机号码" maxlength="11" type="text">
+                    <input id="phoneNum" class="form-control" placeholder="请输入手机号码" maxlength="11" type="text" name="phone">
                   </div>
                   <span style="color:red;display: none;" class="tips"></span>
                   <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -320,25 +296,27 @@
                       <label for="idcode-btn">校验码</label>
                       <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
-                        <input id="idcode-btn" class="form-control" placeholder="请输入校验码" maxlength="6" type="text">
+                        <input id="idcode-btn" class="form-control" placeholder="请输入校验码" maxlength="6" type="text" name="yzm">
                       </div>
                       <span style="color:red;display: none;" class="tips"></span>
                       <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
                       <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
                     </div>
                   </div>
+
                   <div class="col-xs-5 text-center" style="padding-top: 26px">
+                      <span id="message"></span>
                     <button type="button" id="loadingButton" class="btn btn-primary" autocomplete="off">获取短信校验码</button>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <input class="form-control btn btn-primary" id="submit1"
-                    value="立即注册" type="submit">
+                    value="立即注册" type="button">
                 </div>
 
                 <div class="form-group">
-                  <input value="重置" id="reset" class="form-control btn btn-danger" type="reset">
+                  <input value="重置" id="reset2" class="form-control btn btn-danger" type="button">
                 </div>
               </form>
             </div>
@@ -357,29 +335,46 @@
                 <div class="indexadd mt50 mb60">
                     <div id="banners" class="ui-banner">
                         <ul class="ui-banner-slides">
-                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Get Heart Smart With Essential Omega III" title="NEW! Get Heart Smart With Essential Omega III"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Support Your Skin on a Cellular Level" title="NEW! Support Your Skin on a Cellular Level"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Indulge in Luxury With Royal Spa" title="NEW! Indulge in Luxury With Royal Spa"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Get paid to shop with Cashback" title="NEW! Get paid to shop with Cashback"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="NEW! Radiation Protection at its Best" title="NEW! Radiation Protection at its Best"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="Unleash the Power of Isotonix Today" title="Unleash the Power of Isotonix Today"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="Motives is Changing the Face of UK Beauty" title="Motives is Changing the Face of UK Beauty"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="Get a Taste of Spring" title="Get a Taste of Spring"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="Try Isotonix OPC-3 Today for Better Health" title="Try Isotonix OPC-3 Today for Better Health"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="Feel like a princess with Royal Spa" title="Feel like a princess with Royal Spa"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="Stay energised with Isotonix for the Queen's Jubilee" title="Stay energised with Isotonix for the Queen's Jubilee"/></a></li>
-                            <li><a href=""><img src="img/simgd.jpg" alt="WorldStores - Top Brands Delivered Next Day" title="WorldStores - Top Brands Delivered Next Day"/></a></li>
+                            <li><a href="toutiao.html" target="_blank"><img src="/news/img/toutiao.jpg" alt="NEW! Get Heart Smart With Essential Omega III" title="NEW! Get Heart Smart With Essential Omega III"/></a></li>
+                            <li><a href="toutiao1.html"target="_blank"><img src="/news/img/toutiao1.jpg" alt="NEW! Support Your Skin on a Cellular Level" title="NEW! Support Your Skin on a Cellular Level"/></a></li>
+                            <li><a href="toutiao3.html"target="_blank"><img src="/news/img/toutiao7.jpg" alt="NEW! Indulge in Luxury With Royal Spa" title="NEW! Indulge in Luxury With Royal Spa"/></a></li>
+                            <li><a href="toutiao4.html"target="_blank"><img src="/news/img/toutiao8.jpg" alt="NEW! Get paid to shop with Cashback" title="NEW! Get paid to shop with Cashback"/></a></li>
+                            <li><a href="toutiao5.html"target="_blank"><img src="/news/img/toutiao13.jpg" alt="NEW! Radiation Protection at its Best" title="NEW! Radiation Protection at its Best"/></a></li>
+                            <li><a href="toutiao6.html"target="_blank"><img src="/news/img/toutiao14.jpg" alt="Unleash the Power of Isotonix Today" title="Unleash the Power of Isotonix Today"/></a></li>
+                            <li><a href="toutiao7.html"target="_blank"><img src="/news/img/toutiao20.jpg" alt="Motives is Changing the Face of UK Beauty" title="Motives is Changing the Face of UK Beauty"/></a></li>
+                            <li><a href="toutiao8.html"target="_blank"><img src="/news/img/toutiao23.jpg" alt="Get a Taste of Spring" title="Get a Taste of Spring"/></a></li>
+                            <li><a href="toutiao9.html"target="_blank"><img src="/news/img/xia.jpg" alt="Try Isotonix OPC-3 Today for Better Health" title="Try Isotonix OPC-3 Today for Better Health"/></a></li>
+                            <li><a href="toutiao10.html"target="_blank"><img src="/news/img/tanwu.jpg" alt="Feel like a princess with Royal Spa" title="Feel like a princess with Royal Spa"/></a></li>
+                            <li><a href="toutiao11.html"target="_blank"><img src="/news/img/wajueji.jpg" alt="Stay energised with Isotonix for the Queen's Jubilee" title="Stay energised with Isotonix for the Queen's Jubilee"/></a></li>
+                            <li><a href="toutiao2.html"target="_blank"><img src="/news/img/zhufang.jpg" alt="WorldStores - Top Brands Delivered Next Day" title="WorldStores - Top Brands Delivered Next Day"/></a></li>
                         </ul><!--ui-banner-slides end-->
                         <ul class="ui-banner-slogans">
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                     
+                                          <img src="/news/img/toutiao.jpg" alt="" width="103"/>
+                                      
+                                       
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                       
+                                            <h3 style="margin-top: 8px;">从21分到11分，现又要改5分制，为限制中国队，国际乒联无所不用</h3>
+                                            <p>乒乓球第一站T2钻石联赛，为限制中国队，国际乒联试运行5分制
+                                            </p>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="/news/img/toutiao1.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">「解局」你我的养老金会耗尽吗？</h3>
+                                        <p>一份数月前发布的养老金研究报告，近日再次引发民众焦虑...
                                         </p>
                                     </div>
                                 </div>
@@ -387,12 +382,24 @@
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                        <img src="/news/img/toutiao7.jpg" alt="" width="103"/>
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                        <h3 style="margin-top: 8px;">媒体评北京南四环追尾事故：你凭什么不先救人？</h3>
+                                        <p>7月16日凌晨，一个发生在北京市南四环的车辆追尾事故引发关注。经交警部门通报，这起事故造成了后车车内两人死亡...
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-line">
+                                <div class="ullinehover">
+                                    <div class="ui-bnnerimg floatLeft">
+                                        <img src="/news/img/toutiao8.jpg" alt="" width="103"/>
+                                    </div>
+                                    <div class="ui-bnnerp floatRight">
+                                        <h3 style="margin-top: 8px;">拐了！拐了！台风裂成两半，都拐走了</h3>
+                                        <p>热！热！热！热爆了！福建“连蒸带煮”模式正式上线         
+                                                                        
+                                          
                                         </p>
                                     </div>
                                 </div>
@@ -400,12 +407,11 @@
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                        <img src="/news/img/toutiao13.jpg" alt="" width="103"/>
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                        <h3 style="margin-top: 8px;">华为即将松绑之际美国会又放大招：禁止特朗普未经批准解禁华为</h3>
+                                        <p>美国国会参众两院两党议员7月16日推出新法案，试图正式为华为出口禁令制定立法，并禁止美国总统未经国会批准解禁华为。
                                         </p>
                                     </div>
                                 </div>
@@ -413,12 +419,11 @@
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                        <img src="/news/img/toutiao14.jpg" alt="" width="103"/>
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                        <h3 style="margin-top: 8px;">首批5G手机月底开卖，动手吧！</h3>
+                                        <p>今年6月，我国正式向四大运营商颁发5G牌照，标志着我国步入5G商用元年,目前，已有8款5G手机获得了3C认证，包括华为4款，一加、中兴、vivo、OPPO各一款。
                                         </p>
                                     </div>
                                 </div>
@@ -426,12 +431,11 @@
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                        <img src="/news/img/toutiao20.jpg " alt="" width="103"/>
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                        <h3 style="margin-top: 8px;">自家后院定居9只狼 男子上报相关部门却被告知自费处理</h3>
+                                        <p>根日前，加拿大卡城男子Mike Thomson反映，自家的后院住了一窝狼，包括2只成年狼及7只幼狼，并希望政府来处理。
                                         </p>
                                     </div>
                                 </div>
@@ -439,12 +443,11 @@
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                        <img src="/news/img/toutiao23.jpg" alt="" width="103"/>
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                        <h3 style="margin-top: 8px;">开撕！耐克以侵犯版权反诉伦纳德logo案 并要求金钱赔偿</h3>
+                                        <p>根北京时间7月19日消息，众所周知，此前，快船球星伦纳德已经向耐克公司提出了诉讼
                                         </p>
                                     </div>
                                 </div>
@@ -452,12 +455,11 @@
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                        <img src="/news/img/xia.jpg" alt="" width="103"/>
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                        <h3 style="margin-top: 8px;">全城搜寻“珠海味道”！这场美食盛宴25日拉开帷幕</h3>
+                                        <p>身为珠海人，吃过地道的珠海美食吗？炎炎夏日没胃口，那更需要美食来挑动味蕾啦！“唐家肴”即将带来一场夏日美食盛宴。
                                         </p>
                                     </div>
                                 </div>
@@ -465,12 +467,11 @@
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                        <img src="/news/img/tanwu.jpg" alt="" width="103"/>
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                        <h3 style="margin-top: 8px;">受贿7千余万元！贵州原副省长蒲波被判无期</h3>
+                                        <p>18日,南京市中级人民法院公开宣判贵州省人民政府原副省长蒲波受贿案，对被告人蒲波以受贿罪判处无期徒刑。
                                         </p>
                                     </div>
                                 </div>
@@ -478,12 +479,12 @@
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                        <img src="/news/img/wajueji.jpg" alt="" width="103"/>
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                        <h3 style="margin-top: 8px;">广东首个试点城市！家有推土机挖掘机快办“身份证”！</h3>
+                                        <p>市生态环境局等有关部门联合开展非道路移动机械编码管理检查工作。
+                                          按照我市有关规定，从8月1日起，未申领标志的机械设备将被责令退场，并受相应处罚。非道路移动机械是指装配有发动机的移动机械和可运输工。
                                         </p>
                                     </div>
                                 </div>
@@ -491,38 +492,11 @@
                             <li class="ui-line">
                                 <div class="ullinehover">
                                     <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
+                                        <img src="/news/img/zhufang.jpg" alt="" width="103"/>
                                     </div>
                                     <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="ui-line">
-                                <div class="ullinehover">
-                                    <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
-                                    </div>
-                                    <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="ui-line">
-                                <div class="ullinehover">
-                                    <div class="ui-bnnerimg floatLeft">
-                                        <img src="img/simg.jpg" alt="" width="103"/>
-                                    </div>
-                                    <div class="ui-bnnerp floatRight">
-                                        <h3 style="margin-top: 8px;">设计院开展扶贫济困募捐活动</h3>
-                                        <p>根据总局文明委《关于开展扶贫济困募捐活动的通知》精神，在总局机关和直属单位
-                                            开展扶贫济困募捐活动。
+                                        <h3 style="margin-top: 8px;">不再“爬楼苦”！梅华街道首个旧楼加装电梯运行！</h3>
+                                        <p>7日，梅华街道鸿运社区葵竹苑12栋3单元的居民们喜气洋洋，通过社区党委、居民和有关部门几年的不懈努力，这座老旧居民楼终于装上了电梯了
                                         </p>
                                     </div>
                                 </div>
@@ -536,16 +510,17 @@
         <!--content end-->
  
     </div>
+  
 
     <!--下拉刷新-->
    
     <div id="app">
-      <ul>
+      <ul id="app-content">
         <li>
 					<div class="no-mode">
 						<div class="left-pic">
 							<a href="#">
-						<img src="img/pic.jpg" class="pic"/>
+						<img src="/news/img/pic.jpg" class="pic"/>
 						</a>
 						</div>
 						<div class="title-box-right">
@@ -566,7 +541,7 @@
         	<div class="no-mode">
         		<div class="left-pic">
         			<a href="#">
-        		<img src="img/pic.jpg" class="pic"/>
+        		<img src="/news/img/pic.jpg" class="pic"/>
         		</a>
         		</div>
         		<div class="title-box-right">
@@ -587,7 +562,7 @@
         	<div class="no-mode">
         		<div class="left-pic">
         			<a href="#">
-        		<img src="img/pic.jpg" class="pic"/>
+        		<img src="/news/img/pic.jpg" class="pic"/>
         		</a>
         		</div>
         		<div class="title-box-right">
@@ -608,7 +583,7 @@
         	<div class="no-mode">
         		<div class="left-pic">
         			<a href="#">
-        		<img src="img/pic.jpg" class="pic"/>
+        		<img src="/news/img/pic.jpg" class="pic"/>
         		</a>
         		</div>
         		<div class="title-box-right">
@@ -629,7 +604,7 @@
         	<div class="no-mode">
         		<div class="left-pic">
         			<a href="#">
-        		<img src="img/pic.jpg" class="pic"/>
+        		<img src="/news/img/pic.jpg" class="pic"/>
         		</a>
         		</div>
         		<div class="title-box-right">
@@ -653,45 +628,168 @@
   </div>
 </body>
 
-  <!--下拉刷新-->
- <!-- <script>
-  var n=0,flag=true;
-  function appendTestData(){
-    return "<li><h5>"+Math.floor(Math.random()*1000)+"</h5><p>现在开始报时："+new Date()+"</p></li>"
-  }
-  
-  function addhtml(type){
-    console.log("第"+n+"次加载成功")
-    $(".tip").html("第"+n+"次")
-    $("#app ul")[type](appendTestData()+appendTestData()+appendTestData()+appendTestData())
-  }
-  var refreshBox=new PullToRefresh({
-    container:"#app",
-    pull:{
-        callback:function(){
-          setTimeout(function(){             
-            n=0     
-            addhtml("html")
-            refreshBox.endPullRefresh(true)
-          },1000)
-        }
-    },
-    up:{
-        callback:function(){
-          setTimeout(function(){   
-            if(n<8){
-              n++
-             addhtml("append")
-             refreshBox.endUpLoading(true)    
-            }else{    //没有数据
-              refreshBox.endUpLoading(false)
-            }
-          },1000)
+<script>
+
+    $(function () {
+       findAllObject();
+       loadReg();
+       $("#loadingButton").click(sendYZM);
+       $("#submit1").click(regUser);
+       $("#submit").click(loginUser);
+       $("#reset2").click(regClean);
+       $("#reset1").click(loginClean);
+    });
+
+    function loadReg() {
+        if (location.search.substring(1) == "reg=0"){
+            $("#myModal2").modal("show");
         }
     }
-  })
-  </script>
-  -->
+
+    function regClean() {
+        $("#reg-form")[0].reset();
+    }
+
+    function loginClean() {
+        $("#login-form")[0].reset();
+    }
+
+    function loginUser() {
+        if ($("#login-username").val()==""||$("#login-username").val()==null){
+            alert("用户名不能为空!");
+        }
+        if ($("#login-password").val()==""||$("#login-password").val()==null){
+            alert("密码不能为空!");
+        }
+        $("#login-message").html("");
+        console.log($("#login-form").serialize());
+        $.ajax({
+            url: "/user/login",
+            type: "get",
+            data: $("#login-form").serialize(),
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                console.log(result.state);
+                if (result.state == 1){
+                    $("#myModal").modal("hide");
+                    $("#login-form")[0].reset();
+                } else {
+                    console.log(result.message);
+                    $("#login-message").html(result.message);
+                }
+            },
+            error: function () {
+                console.log("服务端无法接受此请求!");
+            }
+        });
+    }
+
+    function regUser() {
+        if (!($("#reg-password").val() == $("#passwordConfirm").val())){
+            alert("密码与确认密码不一致!");
+            return false;
+        }
+        console.log($("#reg-username").val()+","+$("#reg-password").val()+","
+            +$("#phoneNum").val()+","+$("#idcode-btn").val());
+        $("#message").html("");
+        $.ajax({
+            url: "/user/register?regUsername="+$("#reg-username").val()+"&regPassword="+$("#reg-password").val()+"&phone="+$("#phoneNum").val()+"&yzm="+$("#idcode-btn").val(),
+            type: "get",
+            // data: JSON.stringify({
+            //     regUsername: $("#reg-username").val(),
+            //     regPassword: $("#reg-password").val(),
+            //     phone: $("#phoneNum").val(),
+            //     yzm: $("#idcode-btn").val()
+            // }),
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                console.log(result.state);
+                if (result.state == 1){
+                    $("#myModal2").modal("hide");
+                    $("#myModal").modal("show");
+                    $("#reg-form")[0].reset();
+                } else {
+                    $("#message").html(result.message);
+                }
+            },
+            error: function () {
+                console.log("服务端无法接受此请求!");
+            }
+        });
+    }
+
+    function sendYZM() {
+        if(!(/^1[3456789]\d{9}$/.test($("#phoneNum").val()))){
+            alert("手机号码有误，请重填");
+            return false;
+        }
+        $.ajax({
+            url: "/user/matches",
+            type: "POST",
+            data: "phone="+$("#phoneNum").val(),
+            dataType: "json",
+            success: function (result) {
+                if (result.state == 1){
+                    alert("验证码发送成功!");
+                } else {
+                    console.log(result.message);
+                }
+            },
+            error: function () {
+                console.log("服务端无法接受此请求!");
+            }
+        });
+    }
+    
+    function findAllObject() {
+        $.ajax({
+            url: "/news/findAllObject",
+            type: "POST",
+            dataType: "json",
+            success: function (result) {
+                if (result.state == 1){
+                    $("#app-content").empty();
+                    var obj = result.data;
+                    for (var i=0;i<obj.length;i++){
+                        var html = "<li>\n" +
+                            "\t\t\t\t\t<div class=\"no-mode\">\n" +
+                            "\t\t\t\t\t\t<div class=\"left-pic\">\n" +
+                            "\t\t\t\t\t\t\t<a href=\"/doNewsPage/start2?eid="+obj[i].eid+"\">\n" +
+                            "\t\t\t\t\t\t<img src="+obj[i].tilteImage+" class=\"pic\"/>\n" +
+                            "\t\t\t\t\t\t</a>\n" +
+                            "\t\t\t\t\t\t</div>\n" +
+                            "\t\t\t\t\t\t<div class=\"title-box-right\">\n" +
+                            "\t\t\t\t\t\t<div class=\"title-box\">\t\t\t\t\t\t\n" +
+                            "\t\t\t\t\t\t\t<a href=\"/doNewsPage/start2?eid="+obj[i].eid+"\" target=\"_blank\" class=\"link\">"+obj[i].title+"</a>\t\n" +
+                            "\t\t\t\t\t\t\t</div>\n" +
+                            "\t\t\t\t\t\t\t<div class=\"title-inner\">\n" +
+                            "\t\t\t\t\t\t\t\t<p>"+obj[i].content+"</p>\n" +
+                            "\t\t\t\t\t\t\t</div>\n" +
+                            "\t\t\t\t\t\t\t<div class=\"bui-left-footer\">\n" +
+                            "\t\t\t\t\t\t\t\t<a>珠海新闻</a>\n" +
+                            "\t\t\t\t\t\t\t\t<a>翠微评论</a>\n" +
+                            "\t\t\t\t\t\t\t\t</div>\n" +
+                            "\t\t\t\t\t\t</div>\n" +
+                            "\t\t\t\t\t\t</div>\n" +
+                            "        </li>";
+                        $("#app-content").append(html);
+                    }
+
+                } else {
+                    console.log(result.message);
+                }
+            },
+            error: function () {
+                alert("error!");
+            }
+        });
+    }
+
+    
+    
+</script>
 
 
        

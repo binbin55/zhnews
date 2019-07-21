@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class ZhnewsApplicationTests {
 
     @Test
-    public void contextLoads() throws SQLException {
+    public void contextLoads() {
 
     }
 

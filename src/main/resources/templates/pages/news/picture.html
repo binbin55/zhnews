@@ -2,8 +2,245 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		 <meta name="renderer" content="webkit">
+		 <title>珠海头条</title>
+		 <!-- Bootstrap -->
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/news/css/start2.css"/>
+		<!-- 回到顶部css -->
+		<link rel="icon" href="/news/img/timg.jpg" type="image/x-icon"/>
+		<link rel="shortcut icon" href="/news/img/timg.jpg" type="image/x-icon">
+		<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+		<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+		<script src="/news/js/jquery.min.js"></script>
+		<!-- FreeWall -->
+		<script src="/news/js/blocksit.js"></script>
+		<script src="/news/js/blocksit.min.js"></script>
+		<script src="/news/js/jquery.lazyload.min.js"></script>
+		<link rel="stylesheet" href="/news/css/freewall.css"/>
+		<script type="text/javascript">
+$(function(){
+	$("img.lazy").lazyload({		
+		load:function(){
+			$('#container').BlocksIt({
+				numOfCol:5,
+				offsetX: 8,
+				offsetY: 8
+			});
+		}
+	});	
+	$(window).scroll(function(){
+			// 当滚动到最底部以上50像素时， 加载新内容
+		if ($(document).height() - $(this).scrollTop() - $(this).height()<50){
+			$('#container').append($("#test").html());		
+			$('#container').BlocksIt({
+				numOfCol:5,
+				offsetX: 8,
+				offsetY: 8
+			});
+			$("img.lazy").lazyload();
+		}
+	});
+	
+	//window resize
+	var currentWidth = 1100;
+	$(window).resize(function() {
+		var winWidth = $(window).width();
+		var conWidth;
+		if(winWidth < 660) {
+			conWidth = 440;
+			col = 2
+		} else if(winWidth < 880) {
+			conWidth = 660;
+			col = 3
+		} else if(winWidth < 1100) {
+			conWidth = 880;
+			col = 4;
+		} else {
+			conWidth = 1100;
+			col = 5;
+		}
+		
+		if(conWidth != currentWidth) {
+			currentWidth = conWidth;
+			$('#container').width(conWidth);
+			$('#container').BlocksIt({
+				numOfCol: col,
+				offsetX: 8,
+				offsetY: 8
+			});
+		}
+	});
+});
+</script>
 	</head>
 	<body>
+		<nav class="navbar navbar-default" role="navigation">
+		    <div class="container-fluid"> 
+		    <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse"
+		                data-target="#example-navbar-collapse">
+		            <span class="sr-only">切换导航</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="#">珠海头条</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+		        <ul class="nav navbar-nav">
+		            <li><a href="#">热点</a></li>
+		            <li><a href="#">财经</a></li>
+					<li><a href="#">国际</a></li>
+					<li><a href="#">汽车</a></li>
+		            <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		                    更多 <b class="caret"></b>
+		                </a>
+		                <ul class="dropdown-menu">
+		                    <li><a href="#">游戏</a></li>
+		                    <li><a href="#">娱乐</a></li>
+		                    <li><a href="#">体育</a></li>
+							<li><a href="#">军事</a></li>
+							<li><a href="#">文学</a></li>
+		                </ul>
+		            </li>
+		        </ul>
+					<div class="weather">
+							<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=9" width="500"
+                            height="60" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+					<ul class="nav navbar-right">
+						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					            个人中心 <b class="caret"></b>
+					        </a>
+					        <ul class="dropdown-menu">
+					            <li><a href="#">游戏</a></li>
+					            <li><a href="#">娱乐</a></li>
+					            <li><a href="#">体育</a></li>
+					        </ul></li>
+							<li></li>
+					</ul>
+				</div>
+				
+		    </div>
+		    </div>
+		</nav>
+<div id="wrapper">
+
+	<div id="container">
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/1.jpg" width="175" /></div>
+			<strong>图片信息1</strong>
+			<p>2007年7月，jQuery 1.1.3版发布，这次小版本的变化包含了对jQuery选择符引擎执行速度的显著提升。从这个版本开始，jQuery的性能达到了Prototype、Mootools以及Dojo等同类JavaScript库的水平。</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/2.jpg" width="175" /></div>
+			<strong>图片信息2</strong>
+			<p>jQuery的第一个稳定版本，并且已经支持CSS选择符、事件处理和AJAX交互。</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/3.jpg" width="175" /></div>
+			<strong>图片信息3</strong>
+			<p>jquery响应式网站图片无限加载瀑布流布局</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/4.jpg" width="175" /></div>
+			<strong>图片信息4</strong>
+			<p>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/5.jpg" width="175" /></div>
+			<strong>图片信息5</strong>
+			<p>jQuery的核心特性可以总结为：具有独特的链式语法和短小清晰的多功能接口；具有高效灵活的css选择器，并且可对CSS选择器进行扩展</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/6.jpg" width="175" /></div>
+			<strong>图片信息6</strong>
+			<p>jQuery的第一个稳定版本，并且已经支持CSS选择符、事件处理和AJAX交互。</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/7.jpg" width="175" /></div>
+			<strong>图片信息7</strong>
+			<p>jQuery的核心特性可以总结为：具有独特的链式语法和短小清晰的多功能接口；具有高效灵活的css选择器，并且可对CSS选择器进行扩展</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/8.jpg" width="175" /></div>
+			<strong>图片信息4</strong>
+			<p>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/9.jpg" width="175" /></div>
+			<strong>图片信息8</strong>
+			<p>2007年7月，jQuery 1.1.3版发布，这次小版本的变化包含了对jQuery选择符引擎执行速度的显著提升。从这个版本开始，jQuery的性能达到了Prototype、Mootools以及Dojo等同类JavaScript库的水平。</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/10.jpg" width="175" /></div>
+			<strong>图片信息9</strong>
+			<p>2007年7月，jQuery 1.1.3版发布，这次小版本的变化包含了对jQuery选择符引擎执行速度的显著提升。从这个版本开始，jQuery的性能达到了Prototype、Mootools以及Dojo等同类JavaScript库的水平。</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/11.jpg" width="175" /></div>
+			<strong>图片信息10</strong>
+			<p>jQuery的第一个稳定版本，并且已经支持CSS选择符、事件处理和AJAX交互。</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+	</div>
+
+</div>
+
+
+<div id="test" style="display:none;">
+	<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/1.jpg" width="175" /></div>
+			<strong>图片信息1</strong>
+			<p>2007年7月，jQuery 1.1.3版发布，这次小版本的变化包含了对jQuery选择符引擎执行速度的显著提升。从这个版本开始，jQuery的性能达到了Prototype、Mootools以及Dojo等同类JavaScript库的水平。</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/2.jpg" width="175" /></div>
+			<strong>图片信息2</strong>
+			<p>jQuery的第一个稳定版本，并且已经支持CSS选择符、事件处理和AJAX交互。</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/3.jpg" width="175" /></div>
+			<strong>图片信息3</strong>
+			<p>jquery响应式网站图片无限加载瀑布流布局</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/4.jpg" width="175" /></div>
+			<strong>图片信息4</strong>
+			<p>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库</p>
+			<div class="meta"><a href="#">点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/5.jpg" width="175" /></div>
+			<strong>图片信息5</strong>
+			<p>jQuery的核心特性可以总结为：具有独特的链式语法和短小清晰的多功能接口；具有高效灵活的css选择器，并且可对CSS选择器进行扩展</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+		<div class="grid">
+			<div class="imgholder"><img class="lazy" src="/news/images/pixel.gif" data-original="images/6.jpg" width="175" /></div>
+			<strong>图片信息6</strong>
+			<p>jQuery的第一个稳定版本，并且已经支持CSS选择符、事件处理和AJAX交互。</p>
+			<div class="meta"><a href="#" >点击查看</a></div>
+		</div>
+</div>
 	</body>
 </html>

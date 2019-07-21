@@ -1,6 +1,9 @@
 package com.cy.zhnews.dao;
 
-public interface EssayImageDao {
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.cy.zhnews.entity.po.EssayImage;
+
+public interface EssayImageDao extends BaseMapper<EssayImage> {
 
 
 

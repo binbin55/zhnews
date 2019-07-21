@@ -1,3 +1,4 @@
+<!--发布-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,13 +10,14 @@
 		<title>发布中心</title>
 		<!-- Bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="icon" href="img/timg.jpg" type="image/x-icon"/>
-		<link rel="shortcut icon" href="img/timg.jpg" type="image/x-icon">
-		<link rel="stylesheet" href="css/release.css"/>
+		<link rel="icon" href="/news/img/timg.jpg" type="image/x-icon"/>
+		<link rel="shortcut icon" href="/news/img/timg.jpg" type="image/x-icon">
+		<link rel="stylesheet" href="/news/css/release.css"/>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 		<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-		<script src="js/jquery.min.js"></script>
+		<script src="/news/js/jquery-1.7.2.min.js"></script>
+		<script src="/news/js/jquery.min.js"></script>
 	</head>
 	<body>
 		<div>
@@ -74,26 +76,161 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">发布新闻</h3>
 	</div>
-	<form>
+	<div id="insert">
+	<form id="insert-from" enctype="multipart/form-data">
+
 	<div class="form-group">
-		<label for="name">标题</label>
-		<input type="text" class="form-control" placeholder="文本输入">
+
+		<label for="essay-type">文章类型</label>
+		<select class="form-control" name="tid" id="essay-type">
+			<option>财经</option>
+		</select>
+
+		<label for="tilteImage">上传标题图片</label>
+		<input type="file" id="tilteImage" name="tilteImage" onchange="changepic(this)">
+		<img src="" id="title-img">
+
+		<label for="title">标题</label>
+		<input id="title" type="text" class="form-control" placeholder="文本输入" name="title">
+
+		<label for="content">标题正文</label>
+		<textarea id="content" class="form-control" rows="2" name="content"></textarea>
+
 	</div>
-	<div class="form-inner">
-		<label for="name">文本框</label>
-		<textarea class="form-control" rows="3"></textarea>
-	</div>
-	<div class="form-pic">
-		<label for="inputfile">上传图片</label>
-		<input type="file" id="inputfile">
-	</div>
+		<div class="form-inner">
+
+			<label for="essayImage">插入文章图片</label>
+			<input type="file" multiple id="essayImage" name="ei_image">
+
+			<div id="essay-div">
+
+			</div>
+
+			<label for="content">文章</label>
+			<textarea id="essay" class="form-control" rows="3" name="essay"></textarea>
+
+		</div>
+
 	<br />
 	<div class="form-btn">
-		<button type="button" class="btn btn-primary">提交</button>
-		<button type="rest" class="btn btn-warning">重置</button>
+		<button id="insertBtn" type="button" class="btn btn-primary">提交</button>
+		<button id="resetBtn" type="button" class="btn btn-warning">重置</button>
 	</div>
 </form>
+		</div>
 	</div>
 		</div>
 	</body>
+	<script>
+		$(function () {
+			$("#insertBtn").click(insertTitle);
+			essayTypeFindAll();
+			$("#resetBtn").click(emptyObject);
+			$("#resetBtn").click(formClean);
+			$("#essayImage").click(uploadMushImage);
+		})
+
+		function changepic() {
+			var reads= new FileReader();
+			f=document.getElementById('tilteImage').files[0];
+			reads.readAsDataURL(f);
+			reads.onload=function (e) {
+				document.getElementById('title-img').src=this.result;
+			};
+		}
+
+		function uploadMushImage() {
+			var $input = $("#essayImage");
+			console.log($input);
+			$input.on("change" , function(){
+				console.log(this);
+				var files = this.files;
+				var length = files.length;
+				console.log("选择了"+length+"张图片");
+				//3、回显
+				$.each(files,function(key,value){
+					//每次都只会遍历一个图片数据
+					var div = document.createElement("div"),
+							img = document.createElement("img");
+					div.className = "pic";
+
+					var fr = new FileReader();
+					fr.onload = function(){
+						img.src=this.result;
+						div.appendChild(img);
+						$("#essay-div")[0].appendChild(div);
+					}
+					fr.readAsDataURL(value);
+				})
+
+			})
+
+			//4、我们把当前input标签的id属性remove
+			$input.removeAttr("id");
+			//我们做个标记，再class中再添加一个类名就叫test
+			var newInput = '<input type="file" name="ei_image" multiple id="essayImage">';
+			$(this).append($(newInput));
+
+
+		}
+
+		function formClean() {
+			$("#insert-from")[0].reset();
+		}
+
+	function insertTitle() {
+		$.ajax({
+			url : '/news/insertTitle',
+			data: new FormData($("#insert-from")[0]),
+			type : "POST",
+			dataType : 'text',
+			processData: false,
+			contentType: false,
+			cache: false,
+			success : function (result){
+				if (result.state == 1){
+					alert(result.message);
+				} else {
+					console.log(result.message);
+				}
+			},
+			error : function () {
+				alert("网络异常!");
+			}
+		});
+	}
+
+	function essayTypeFindAll() {
+		$.ajax({
+			url : '/newsType/findAll',
+			type : "POST",
+			dataType : 'json',
+			success : function (result){
+				if (result.state == 1){
+					$("#essay-type").empty();
+					var list = result.data;
+					for (var i=0;i<list.length;i++){
+						var option = $("<option></option>");
+						option.html(list[i].type);
+						option.prop("value",list[i].tid);
+						$("#essay-type").append(option);
+					}
+				} else {
+					console.log(result.message);
+				}
+			},
+			error : function () {
+				alert("网络异常!");
+			}
+		})
+	}
+
+	function emptyObject() {
+		$("#title").html();
+		$("#content").html();
+		$("#tilteImage").html();
+		$("#essay").html();
+	}
+
+	</script>
 </html>

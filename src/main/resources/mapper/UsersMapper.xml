@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.zhnews.dao.UsersDao">
+ 	<insert id="insertUser"
+            parameterType="com.cy.zhnews.entity.po.Users"
+            useGeneratedKeys="true"
+            keyProperty="uid">
+	  insert into users(
+          username,password,salt,
+          phone,valid,countNews,yzm,
+          createTime,modifiedTime,
+          createUser,modifiedUser
+	  )
+      values(
+            #{username},#{password},#{salt},
+            #{phone},#{valid},#{countNews},#{yzm},
+            #{createTiime},#{modifiedTime},
+            #{createUser},#{modifiedUser}
+      )
+ 	</insert>
+</mapper>

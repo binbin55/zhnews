@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Data
 @ToString
-public class Users  implements Serializable {
+public class Users implements Serializable {
 
     private int uid;
     private String username;
@@ -18,10 +18,10 @@ public class Users  implements Serializable {
     private String phone;
     private int valid;
     private Integer countNews;
-    private Date createTiime;
+    private Date createTime;
     private Date modifiedTime;
     private String createUser;
     private String modifiedUser;
-
+    private String yzm;
 
 }

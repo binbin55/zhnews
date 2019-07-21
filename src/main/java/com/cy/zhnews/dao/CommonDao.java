@@ -1,6 +1,9 @@
 package com.cy.zhnews.dao;
 
-public interface CommonDao {
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.cy.zhnews.entity.po.Common;
+
+public interface CommonDao extends BaseMapper<Common> {
 
 
 
